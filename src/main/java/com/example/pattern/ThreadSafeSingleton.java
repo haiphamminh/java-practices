@@ -25,7 +25,7 @@ public class ThreadSafeSingleton {
         /*for (int i = 0; i < 2000; i++) {
             es.execute(() -> {
                 System.out.println(Thread.currentThread().getName() + " Start");
-                Singleton inst = Singleton.getInst();
+                DoubleCheckLockingSingleton inst = DoubleCheckLockingSingleton.getInst();
                 set.add(inst);
                 System.out.println(Thread.currentThread().getName() + " End. inst = " + inst);
             });
@@ -37,15 +37,15 @@ public class ThreadSafeSingleton {
     }
 
     public static class Singleton {
-        private static Singleton inst;// = new Singleton();
+        private static Singleton inst;// = new DoubleCheckLockingSingleton();
 
         private Singleton() {}
 
         public static Singleton getInst() {
             /*if (inst == null) {
-                synchronized (Singleton.class) {
+                synchronized (DoubleCheckLockingSingleton.class) {
                     if (inst == null) {
-                        inst = new Singleton();
+                        inst = new DoubleCheckLockingSingleton();
                     }
                 }
             }*/
