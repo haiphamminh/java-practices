@@ -6,3 +6,4 @@ description
 config
 HEAD
 info/
+out/
