@@ -1,0 +1,8 @@
+hooks/
+.gradle/
+.idea/
+build/
+description
+config
+HEAD
+info/
