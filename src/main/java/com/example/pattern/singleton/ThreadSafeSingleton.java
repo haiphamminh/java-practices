@@ -1,4 +1,4 @@
-package com.example.pattern;
+package com.example.pattern.singleton;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package com.example.pattern;
+package com.example.pattern.decorator;
 
 public class DecoratorPattern {
     public static void main(String[] args) {

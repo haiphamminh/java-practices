@@ -1,4 +1,4 @@
-package com.example.pattern;
+package com.example.pattern.strategy;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
