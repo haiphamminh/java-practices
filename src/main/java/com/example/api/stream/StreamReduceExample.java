@@ -14,6 +14,9 @@ public class StreamReduceExample {
     }
 
     static void sumNumbers() {
+        long[] ar = new long[] { 1, 2, 3 };
+        Arrays.stream(ar)
+              .reduce(0, Long::sum);
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
 
         // use lambda expression
