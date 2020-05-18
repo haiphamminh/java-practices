@@ -34,15 +34,36 @@ public class PrintInOrder {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        PrintInOrder f = new PrintInOrder();
-        f.third(() -> {
-            System.out.print("third");
+        final PrintInOrder f = new PrintInOrder();
+        Thread t1 = new Thread(() -> {
+            try {
+                f.third(() -> {
+                    System.out.print("third");
+                });
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         });
-        f.second(() -> {
-            System.out.print("second");
+        t1.start();
+        Thread t2 = new Thread(() -> {
+            try {
+                f.second(() -> {
+                    System.out.print("second");
+                });
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         });
-        f.first(() -> {
-            System.out.print("first");
+        t2.start();
+        Thread t3 = new Thread(() -> {
+            try {
+                f.first(() -> {
+                    System.out.print("first");
+                });
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         });
+        t3.start();
     }
 }
